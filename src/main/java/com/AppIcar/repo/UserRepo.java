@@ -1,0 +1,13 @@
+package com.AppIcar.repo;
+
+import com.AppIcar.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepo extends JpaRepository<User, String> {
+
+    User findByFullname(String fullname);
+
+    User findByEmail(String email);
+}
